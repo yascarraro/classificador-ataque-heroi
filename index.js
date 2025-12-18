@@ -22,22 +22,23 @@ class heroi {
 				ataque = "shuriken";
 				break;
 			default:
-				ataque = "desconhecido";
+				ataque = "ataque misterioso";
 		}
 
 		console.log(`O ${this.tipo} ${this.nome} atacou usando ${ataque}`)
 	}
 }
 
-let ataqueHeroi1 = new heroi("Yas", 25, "mago")
-let ataqueHeroi2 = new heroi("João", 18, "guerreiro")
-let ataqueHeroi3 = new heroi("Sofia", 15, "ninja")
-let ataqueHeroi4 = new heroi("Alice", 13, "monge")
-let ataqueHeroi5 = new heroi("Pedro", 05, "lider")
+let listaHerois = {
+	0: ["Yas", 25, "mago"],
+    1: ["João", 18, "guerreiro"],
+    2: ["Sofia", 15, "ninja"],
+    3: ["Alice", 13, "monge"],
+    4: ["Pedro", 05, "líder"],
+}
 
-
-ataqueHeroi1.atacar()
-ataqueHeroi2.atacar()
-ataqueHeroi3.atacar()
-ataqueHeroi4.atacar()
-ataqueHeroi5.atacar()
+for (let index in listaHerois) {
+	let [heroiNome, heroiIdade, heroiTipo] = listaHerois[index]
+    let ataqueHeroi = new heroi(heroiNome, heroiIdade, heroiTipo)
+    ataqueHeroi.atacar()
+}
